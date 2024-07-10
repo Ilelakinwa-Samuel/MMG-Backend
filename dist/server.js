@@ -35,13 +35,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const body_parser_1 = __importDefault(require("body-parser"));
+const express = __importStar(require("express"));
+const bodyParser = __importStar(require("body-parser"));
 const database_1 = __importDefault(require("./database"));
 const Item_1 = __importDefault(require("./models/Item"));
 const cron = __importStar(require("node-cron"));
-const app = (0, express_1.default)();
-app.use(body_parser_1.default.json());
+const app = express();
+app.use(bodyParser.json());
 app.listen(3000, () => __awaiter(void 0, void 0, void 0, function* () {
     yield database_1.default.sync();
     console.log('Server is running on port 3000');

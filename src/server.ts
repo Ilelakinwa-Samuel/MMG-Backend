@@ -1,5 +1,5 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
 import sequelize from './database';
 import Item from './models/Item';
 import * as cron from 'node-cron';
